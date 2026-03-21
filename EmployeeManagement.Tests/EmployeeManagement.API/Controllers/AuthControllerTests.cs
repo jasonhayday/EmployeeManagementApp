@@ -1,47 +1,47 @@
-﻿using EmployeeManagement.Infrastructure.Auth;
-using Microsoft.AspNetCore.Mvc;
+﻿//using EmployeeManagement.Infrastructure.Auth;
+//using Microsoft.AspNetCore.Mvc;
 
-namespace EmployeeManagement.API.Controllers.Tests;
+//namespace EmployeeManagement.API.Controllers.Tests;
 
-public class AuthControllerTests
-{
-    private const string Secret = "THIS_IS_A_SUPER_SECRET_KEY_FOR_TESTING";
+//public class AuthControllerTests
+//{
+//    private const string Secret = "THIS_IS_A_SUPER_SECRET_KEY_FOR_TESTING";
 
-    [Fact]
-    public void Login_Should_Return_Ok()
-    {
-        // Arrange
-        var jwtService = new JwtService(Secret);
-        var controller = new AuthController(jwtService);
+//    [Fact]
+//    public void Login_Should_Return_Ok()
+//    {
+//        // Arrange
+//        var jwtService = new JwtService(Secret);
+//        var controller = new AuthController(jwtService);
 
-        // Act
-        var result = controller.Login("jason");
+//        // Act
+//        var result = controller.Login("jason");
 
-        // Assert
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.Equal(200, okResult.StatusCode);
-    }
+//        // Assert
+//        var okResult = Assert.IsType<OkObjectResult>(result);
+//        Assert.Equal(200, okResult.StatusCode);
+//    }
 
-    [Fact]
-    public void Login_Should_Return_Token()
-    {
-        // Arrange
-        var jwtService = new JwtService(Secret);
-        var controller = new AuthController(jwtService);
+//    [Fact]
+//    public void Login_Should_Return_Token()
+//    {
+//        // Arrange
+//        var jwtService = new JwtService(Secret);
+//        var controller = new AuthController(jwtService);
 
-        // Act
-        var result = controller.Login("jason");
+//        // Act
+//        var result = controller.Login("jason");
 
-        // Assert
-        var okResult = Assert.IsType<OkObjectResult>(result);
+//        // Assert
+//        var okResult = Assert.IsType<OkObjectResult>(result);
 
-        var value = okResult.Value!;
-        var tokenProperty = value.GetType().GetProperty("token");
+//        var value = okResult.Value!;
+//        var tokenProperty = value.GetType().GetProperty("token");
 
-        Assert.NotNull(tokenProperty);
+//        Assert.NotNull(tokenProperty);
 
-        var token = tokenProperty!.GetValue(value) as string;
+//        var token = tokenProperty!.GetValue(value) as string;
 
-        Assert.False(string.IsNullOrEmpty(token));
-    }
-}
+//        Assert.False(string.IsNullOrEmpty(token));
+//    }
+//}

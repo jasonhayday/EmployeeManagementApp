@@ -12,4 +12,6 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Employee> Employees { get; set; }
+    public DbSet<User> Users => Set<User>();
+    public DbSet<ErrorLog> ErrorLogs => Set<ErrorLog>();
 }
